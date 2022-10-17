@@ -20,7 +20,7 @@ const isEnvProd = process.env.NODE_ENV === 'production'
 const fixExportDefault = () => ({
   name: 'fix-export-default',
   renderChunk: (code) => ({
-    code: code.replace(/\bexport { (\S+) as default };/, 'export default $1;'),
+    code: code.replace(/\bmodule.exports = (\S+);/, 'export default $1;'),
     map: null,
   }),
 })
@@ -54,7 +54,8 @@ const options = {
   ],
   output: {
     file: pkg.main,
-    format: 'es',
+    format: 'cjs',
+    exports: 'default',
   },
 }
 export default options
