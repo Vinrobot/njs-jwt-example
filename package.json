@@ -1,0 +1,17 @@
+{
+  "name": "njs-jwt-example",
+  "version": "1.0.0",
+  "license": "MIT",
+  "main": "dist/main.js",
+  "scripts": {
+    "build": "webpack --config webpack.config.js && cat src/export.js >> dist/main.js"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.19.3",
+    "@babel/core": "^7.19.3",
+    "babel-loader": "^8.2.5",
+    "babel-preset-njs": "^0.2.1",
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0"
+  }
+}
